@@ -8,11 +8,14 @@
 }
 
 .App-header {
+  display: flex;
   background-color: var(--offblack);
   flex: 1;
   font-size: calc(10px + 2vmin);
   height: 10vh;
   color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
