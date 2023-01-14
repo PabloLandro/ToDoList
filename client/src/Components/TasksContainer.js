@@ -51,7 +51,7 @@ const TasksContainer = () => {
       {
         structuredTasks().map((set) => {
           return (
-            <Row>
+            <Row className='row'>
               {
                 set.map((task) => (
                   <Task task={task} />
