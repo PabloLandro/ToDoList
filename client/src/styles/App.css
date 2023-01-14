@@ -14,3 +14,10 @@
   height: 10vh;
   color: white;
 }
+
+body {
+  background-color: var(--black);
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
