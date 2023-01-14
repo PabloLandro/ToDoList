@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/tasksContainer.css'
+import '../styles/tasks.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
@@ -42,15 +42,19 @@ const TasksContainer = () => {
 
   console.log(structuredTasks())
 
+  /*
+    
+  */
+
   return (
     <Container style={{ display: "block"}}>
       {
-        structuredTasks().map ((set) => {
+        structuredTasks().map((set) => {
           return (
-            <Row style={{backgroundColor: "red"}}>
+            <Row>
               {
                 set.map((task) => (
-                  <Task task={task}/>
+                  <Task task={task} />
                 ))
               }
             </Row>

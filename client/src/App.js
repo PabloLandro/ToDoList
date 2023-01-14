@@ -1,6 +1,8 @@
 import './styles/App.css'
 import './styles/global.css'
 import TasksContainer from './Components/TasksContainer';
+import Container from 'react-bootstrap/Container'
+
 
 function App() {
   return (
@@ -8,9 +10,9 @@ function App() {
       <header className="App-header">
         <h1>To Do List!</h1>
       </header>
-      <body className="App-body">
+      <Container className="App-body">
         <TasksContainer />
-      </body>
+      </Container>
     </div>
   );
 }
