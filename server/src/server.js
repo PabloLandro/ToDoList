@@ -1,8 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
+const cors = require('cors')
+
 const Task = require('./models/task')
+
 const app = express()
+app.use(cors())
 
 dotenv.config()
 dotenv.config({ path: '.env.local', override: true });
