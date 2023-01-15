@@ -3,6 +3,8 @@ import '../styles/tasks.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
+import { getTasks } from '../api.js'
+
 import Task from './Task'
 
 const tasks = [
@@ -26,7 +28,6 @@ const tasks = [
 
 const TasksContainer = () => {
   const LENGTH = 3
-
   const nRows = tasks.length / LENGTH
 
   const structuredTasks = () => {
@@ -40,21 +41,17 @@ const TasksContainer = () => {
     return out
   }
 
-  console.log(structuredTasks())
-
-  /*
-    
-  */
+  getTasks().then((out) => console.log("return:" + out))
 
   return (
     <Container style={{ display: "block"}}>
       {
-        structuredTasks().map((set) => {
+        structuredTasks().map((set, index) => {
           return (
-            <Row className='row'>
+            <Row key={index} className='row'>
               {
                 set.map((task) => (
-                  <Task task={task} />
+                  <Task key={task.title} task={task} />
                 ))
               }
             </Row>
