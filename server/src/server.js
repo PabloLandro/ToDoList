@@ -42,7 +42,7 @@ const start = async () => {
   try {
     await mongoose.connect(CONN)
     app.listen(PORT, () => {
-      console.log('Server is online')
+      console.log('Server is online in port ' + PORT)
     })
   } catch (e) {
     console.log(e.message)
