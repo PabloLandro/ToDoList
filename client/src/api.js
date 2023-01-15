@@ -1,7 +1,7 @@
 const client = async (route) => {
-  console.log('in')
-  const response = fetch(process.env.REACT_APP_URL + route)
-  console.log(await(response))
+  console.log('CALLING: ' + process.env.REACT_APP_SERVERU + route)
+  //fetch(process.env.REACT_APP_SERVERU + route).then((res) => res.json()).then((result) => console.log(result))
+  const response = fetch(process.env.REACT_APP_SERVERU + route)
   return (await response).json()
 }
 

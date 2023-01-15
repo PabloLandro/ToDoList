@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/tasks.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -28,12 +28,14 @@ const tasks = [
 
 const TasksContainer = () => {
   const LENGTH = 3
-  const nRows = tasks.length / LENGTH
+  const nRows = () => tasks.length / LENGTH
+
+  const [ tasks, setTasks ] = useState([])
 
   const structuredTasks = () => {
     const out = []
 
-    for (let i = 0; i < nRows-1; i++) {
+    for (let i = 0; i < nRows()-1; i++) {
       out.push(tasks.slice(i, i + LENGTH))
     }
 
@@ -41,7 +43,7 @@ const TasksContainer = () => {
     return out
   }
 
-  getTasks().then((out) => console.log("return:" + out))
+  getTasks().then((out) => setTasks(out))
 
   return (
     <Container style={{ display: "block"}}>
